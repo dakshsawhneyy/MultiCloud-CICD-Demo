@@ -40,7 +40,7 @@ jobs:
       - name: Image Scanning through trivy
         uses: aquasecurity/trivy-action@v0.36.0
         with:
-          image-ref: 'demoa-app'
+          image-ref: 'demo-app'
           severity: 'CRITICAL'
           exit-code: '1'
       - name: Checking for GitLeaks
