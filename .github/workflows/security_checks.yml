@@ -1,0 +1,30 @@
+name: Security Checking Pipeline
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+
+  security-checking:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Setup NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install Dependencies
+        run: npm install
+      - name: Run dependency security checks
+        run: npm audit
+      - name: Run tests
+        run: npm test  
+      # Filesystem scanning
+      - name: Trivy filesystem checking
+        uses: aquasecurity/trivy-action@v0.36.0
+        with:
+          scan-type: 'fs'
+          severity: 'CRITICAL'
+  
