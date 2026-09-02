@@ -27,4 +27,4 @@ jobs:
         with:
           scan-type: 'fs'
           severity: 'CRITICAL'
-  
+          exit-code: '1'
