@@ -18,5 +18,7 @@ COPY --from=builder /app /app
 RUN addgroup appgroup && adduser -S appuser -G appgroup
 USER appuser
 
+EXPOSE 3000
+
 # Running the Application
 CMD ["node", "app.js"]
