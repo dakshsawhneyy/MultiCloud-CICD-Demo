@@ -40,7 +40,7 @@ jobs:
       - name: Image Scanning through trivy
         uses: aquasecurity/trivy-action@v0.36.0
         with:
-          image-ref: 'demo-app'
+          image-ref: '${{ secrets.DOCKERHUB_USERNAME }}/azure-cicd-demo:${{ github.sha }}'
           severity: 'CRITICAL'
           exit-code: '1'
 
