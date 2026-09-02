@@ -1,7 +1,8 @@
 name: AWS CI/CD Pipeline
 
 on:
-  push:
+  # push:
+  workflow_dispatch: 
 
 jobs:
 
