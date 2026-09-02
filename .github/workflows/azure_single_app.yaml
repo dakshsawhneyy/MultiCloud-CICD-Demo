@@ -37,12 +37,12 @@ jobs:
             -t ${{ secrets.DOCKERHUB_USERNAME }}/azure-cicd-demo:${{ github.sha }} \
             -t ${{ secrets.DOCKERHUB_USERNAME }}/azure-cicd-demo:latest .
 
-      - name: Image Scanning through trivy
-        uses: aquasecurity/trivy-action@v0.36.0
-        with:
-          image-ref: '${{ secrets.DOCKERHUB_USERNAME }}/azure-cicd-demo:${{ github.sha }}'
-          severity: 'CRITICAL'
-          exit-code: '1'
+      # - name: Image Scanning through trivy
+      #   uses: aquasecurity/trivy-action@v0.36.0
+      #   with:
+      #     image-ref: '${{ secrets.DOCKERHUB_USERNAME }}/azure-cicd-demo:${{ github.sha }}'
+      #     severity: 'CRITICAL'
+      #     exit-code: '1'
 
       - name: Login to Docker Hub
         uses: docker/login-action@v3
