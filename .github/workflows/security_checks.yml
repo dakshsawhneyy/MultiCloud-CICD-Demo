@@ -1,7 +1,7 @@
 name: Security Checking Pipeline
 
 on:
-  push:
+  # push:
   workflow_dispatch:
 
 jobs:
