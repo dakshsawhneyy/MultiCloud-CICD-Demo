@@ -1,7 +1,8 @@
 name: Docker Hub & Azure VM Pipeline
 
 on:
-  push:
+  # push:
+  workflow_dispatch: 
 
 jobs:
   build-test-deploy:
